@@ -1,3 +1,9 @@
+#/var/www/html/dafpc/app/config/routing.yml
+
+upload:
+    resource: "@DafpcBundle/Resources/config/routing.yml"
+    prefix:   /
+
 dafpc:
     resource: "@DafpcBundle/Resources/config/routing.yml"
     prefix:   /

@@ -1,3 +1,7 @@
+dafpc_upload:
+    resource: "@DafpcBundle/Resources/config/routing/upload.yml"
+    prefix:   /upload
+
 dafpc_homepage:
     path:     /
     defaults: { _controller: DafpcBundle:Default:index }

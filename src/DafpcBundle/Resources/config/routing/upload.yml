@@ -1,0 +1,37 @@
+#/var/www/html/dafpc/src/DafpcBundle/Resources/config/routing/upload.yml
+
+upload_index:
+    path:     /
+    defaults: { _controller: "DafpcBundle:Upload:index" }
+    methods:  GET
+
+upload_show:
+    path:     /{id}/show
+    defaults: { _controller: "DafpcBundle:Upload:show" }
+    methods:  GET
+
+upload_new:
+    path:     /new
+    defaults: { _controller: "DafpcBundle:Upload:new" }
+    methods:  [GET, POST]
+
+upload_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "DafpcBundle:Upload:edit" }
+    methods:  [GET, POST]
+
+upload_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "DafpcBundle:Upload:delete" }
+    methods:  [POST, DELETE]
+
+
+upload_create:
+    path:     /create
+    defaults: { _controller: "DafpcBundle:Upload:create" }
+    methods:  POST
+
+upload_update:
+    path:     /{id}/update
+    defaults: { _controller: "DafpcBundle:Images:update" }
+    methods:  [POST, PUT]

@@ -1,0 +1,22 @@
+DafpcBundle\Entity\Upload:
+    type: entity
+    table: null
+    repositoryClass: DafpcBundle\Repository\UploadRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        photo:
+            type: string
+            length: 255
+            image: ~
+
+    lifecycleCallbacks:
+        prePersist: [ preUpload ]
+        preUpdate: [ preUpload ]
+        postPersist: [ upload ]
+        postUpdate: [ upload ]
+        postRemove: [ removeUpload ]

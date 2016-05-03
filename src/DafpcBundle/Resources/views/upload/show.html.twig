@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Uploads</h1>
+
+    <table>
+        <tbody>
+
+        <img src = "{{ app.request.basepath  }}/upload/{{ entity.photo }}">
+
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('upload_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('upload_edit', { 'id': entity.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
