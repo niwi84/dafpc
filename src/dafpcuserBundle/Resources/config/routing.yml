@@ -1,3 +1,0 @@
-dafpcuser_homepage:
-    path:     /
-    defaults: { _controller: dafpcuserBundle:Default:index }
