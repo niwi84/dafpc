@@ -1,0 +1,15 @@
+DafpcBundle\Entity\Upload:
+    type: entity
+    table: null
+    repositoryClass: DafpcBundle\Repository\UploadRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        file:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
