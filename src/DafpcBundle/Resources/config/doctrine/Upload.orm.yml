@@ -12,4 +12,11 @@ DafpcBundle\Entity\Upload:
         file:
             type: string
             length: 255
-    lifecycleCallbacks: {  }
+            image: ~
+    #lifecycleCallbacks: {  }
+    lifecycleCallbacks:
+        prePersist: [ preUpload, setCreatedAtValue, setExpiresAtValue ]
+        preUpdate: [ preUpload, setUpdatedAtValue ]
+        postPersist: [ upload ]
+        postUpdate: [ upload ]
+        postRemove: [ removeUpload ]
