@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
     "name": "ninon/dafpc",
-=======
-    "name": "yann/dafpc",
->>>>>>> yann
     "license": "proprietary",
     "type": "project",
     "autoload": {
@@ -24,12 +20,8 @@
         "symfony/monolog-bundle": "~2.4",
         "sensio/distribution-bundle": "~5.0",
         "sensio/framework-extra-bundle": "^3.0.2",
-<<<<<<< HEAD
-        "incenteev/composer-parameter-handler": "~2.0"
-=======
         "incenteev/composer-parameter-handler": "~2.0",
         "friendsofsymfony/user-bundle": "~2.0@dev"
->>>>>>> yann
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",
@@ -54,14 +46,10 @@
         ]
     },
     "config": {
-<<<<<<< HEAD
-        "bin-dir": "bin"
-=======
         "bin-dir": "bin",
         "platform": {
             "php": "5.3.9"
         }
->>>>>>> yann
     },
     "extra": {
         "symfony-app-dir": "app",

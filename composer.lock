@@ -4,13 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "hash": "8dfaf4a41e3ba30b4538abd71a747b69",
-    "content-hash": "a2b7ab514812f1fbf0c8a3ab275a1cd4",
-=======
-    "hash": "1ad0e16a15a8f433f936c05dd9d56f9e",
-    "content-hash": "11a423b5834ab97e1079effc142cdda9",
->>>>>>> yann
+    "hash": "54ec8bc5d3893b29a6f8e03f3708cea1",
+    "content-hash": "3ba5d2ee3d567658d055f1ae5a1288f3",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -82,22 +77,6 @@
         },
         {
             "name": "doctrine/cache",
-<<<<<<< HEAD
-            "version": "v1.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/cache.git",
-                "reference": "f8af318d14bdb0eff0336795b428b547bd39ccb6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/f8af318d14bdb0eff0336795b428b547bd39ccb6",
-                "reference": "f8af318d14bdb0eff0336795b428b547bd39ccb6",
-                "shasum": ""
-            },
-            "require": {
-                "php": "~5.5|~7.0"
-=======
             "version": "v1.5.4",
             "source": {
                 "type": "git",
@@ -112,28 +91,19 @@
             },
             "require": {
                 "php": ">=5.3.2"
->>>>>>> yann
             },
             "conflict": {
                 "doctrine/common": ">2.2,<2.4"
             },
             "require-dev": {
-<<<<<<< HEAD
-                "phpunit/phpunit": "~4.8|~5.0",
-=======
                 "phpunit/phpunit": ">=3.7",
->>>>>>> yann
                 "predis/predis": "~1.0",
                 "satooshi/php-coveralls": "~0.6"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-<<<<<<< HEAD
-                    "dev-master": "1.6.x-dev"
-=======
                     "dev-master": "1.5.x-dev"
->>>>>>> yann
                 }
             },
             "autoload": {
@@ -173,11 +143,7 @@
                 "cache",
                 "caching"
             ],
-<<<<<<< HEAD
-            "time": "2015-12-31 16:37:02"
-=======
             "time": "2015-12-19 05:03:47"
->>>>>>> yann
         },
         {
             "name": "doctrine/collections",
@@ -247,18 +213,6 @@
         },
         {
             "name": "doctrine/common",
-<<<<<<< HEAD
-            "version": "v2.6.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/common.git",
-                "reference": "a579557bc689580c19fee4e27487a67fe60defc0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/a579557bc689580c19fee4e27487a67fe60defc0",
-                "reference": "a579557bc689580c19fee4e27487a67fe60defc0",
-=======
             "version": "v2.5.3",
             "source": {
                 "type": "git",
@@ -269,7 +223,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/common/zipball/10f1f19651343f87573129ca970aef1a47a6f29e",
                 "reference": "10f1f19651343f87573129ca970aef1a47a6f29e",
->>>>>>> yann
                 "shasum": ""
             },
             "require": {
@@ -278,36 +231,20 @@
                 "doctrine/collections": "1.*",
                 "doctrine/inflector": "1.*",
                 "doctrine/lexer": "1.*",
-<<<<<<< HEAD
-                "php": "~5.5|~7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.8|~5.0"
-=======
                 "php": ">=5.3.2"
             },
             "require-dev": {
                 "phpunit/phpunit": "~3.7"
->>>>>>> yann
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-<<<<<<< HEAD
-                    "dev-master": "2.7.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Doctrine\\Common\\": "lib/Doctrine/Common"
-=======
                     "dev-master": "2.5.x-dev"
                 }
             },
             "autoload": {
                 "psr-0": {
                     "Doctrine\\Common\\": "lib/"
->>>>>>> yann
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -345,11 +282,7 @@
                 "persistence",
                 "spl"
             ],
-<<<<<<< HEAD
-            "time": "2015-12-25 13:18:31"
-=======
             "time": "2015-12-25 13:10:16"
->>>>>>> yann
         },
         {
             "name": "doctrine/dbal",
@@ -657,63 +590,6 @@
             "time": "2015-11-06 14:35:42"
         },
         {
-<<<<<<< HEAD
-            "name": "doctrine/instantiator",
-            "version": "1.0.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/instantiator.git",
-                "reference": "8e884e78f9f0eb1329e445619e04456e64d8051d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/8e884e78f9f0eb1329e445619e04456e64d8051d",
-                "reference": "8e884e78f9f0eb1329e445619e04456e64d8051d",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3,<8.0-DEV"
-            },
-            "require-dev": {
-                "athletic/athletic": "~0.1.8",
-                "ext-pdo": "*",
-                "ext-phar": "*",
-                "phpunit/phpunit": "~4.0",
-                "squizlabs/php_codesniffer": "~2.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Doctrine\\Instantiator\\": "src/Doctrine/Instantiator/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marco Pivetta",
-                    "email": "ocramius@gmail.com",
-                    "homepage": "http://ocramius.github.com/"
-                }
-            ],
-            "description": "A small, lightweight utility to instantiate objects in PHP without invoking their constructors",
-            "homepage": "https://github.com/doctrine/instantiator",
-            "keywords": [
-                "constructor",
-                "instantiate"
-            ],
-            "time": "2015-06-14 21:17:01"
-        },
-        {
-=======
->>>>>>> yann
             "name": "doctrine/lexer",
             "version": "v1.0.1",
             "source": {
@@ -769,33 +645,6 @@
         },
         {
             "name": "doctrine/orm",
-<<<<<<< HEAD
-            "version": "v2.5.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "bc4ddbfb0114cb33438cc811c9a740d8aa304aab"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/bc4ddbfb0114cb33438cc811c9a740d8aa304aab",
-                "reference": "bc4ddbfb0114cb33438cc811c9a740d8aa304aab",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/cache": "~1.4",
-                "doctrine/collections": "~1.2",
-                "doctrine/common": ">=2.5-dev,<2.7-dev",
-                "doctrine/dbal": ">=2.5-dev,<2.6-dev",
-                "doctrine/instantiator": "~1.0.1",
-                "ext-pdo": "*",
-                "php": ">=5.4",
-                "symfony/console": "~2.5|~3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0",
-                "symfony/yaml": "~2.3|~3.0"
-=======
             "version": "v2.4.8",
             "source": {
                 "type": "git",
@@ -818,7 +667,6 @@
             "require-dev": {
                 "satooshi/php-coveralls": "dev-master",
                 "symfony/yaml": "~2.1"
->>>>>>> yann
             },
             "suggest": {
                 "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
@@ -830,11 +678,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-<<<<<<< HEAD
-                    "dev-master": "2.6.x-dev"
-=======
                     "dev-master": "2.4.x-dev"
->>>>>>> yann
                 }
             },
             "autoload": {
@@ -870,9 +714,6 @@
                 "database",
                 "orm"
             ],
-<<<<<<< HEAD
-            "time": "2016-01-05 21:34:58"
-=======
             "time": "2015-08-31 13:19:01"
         },
         {
@@ -943,7 +784,6 @@
                 "User management"
             ],
             "time": "2016-04-28 10:51:07"
->>>>>>> yann
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -1976,23 +1816,6 @@
         },
         {
             "name": "symfony/security-acl",
-<<<<<<< HEAD
-            "version": "v3.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/security-acl.git",
-                "reference": "053b49bf4aa333a392c83296855989bcf88ddad1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/security-acl/zipball/053b49bf4aa333a392c83296855989bcf88ddad1",
-                "reference": "053b49bf4aa333a392c83296855989bcf88ddad1",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.9",
-                "symfony/security-core": "~2.8|~3.0"
-=======
             "version": "v2.8.0",
             "source": {
                 "type": "git",
@@ -2008,17 +1831,12 @@
             "require": {
                 "php": ">=5.3.9",
                 "symfony/security-core": "~2.4|~3.0.0"
->>>>>>> yann
             },
             "require-dev": {
                 "doctrine/common": "~2.2",
                 "doctrine/dbal": "~2.2",
                 "psr/log": "~1.0",
-<<<<<<< HEAD
-                "symfony/phpunit-bridge": "~2.8|~3.0"
-=======
                 "symfony/phpunit-bridge": "~2.7|~3.0.0"
->>>>>>> yann
             },
             "suggest": {
                 "doctrine/dbal": "For using the built-in ACL implementation",
@@ -2028,11 +1846,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-<<<<<<< HEAD
-                    "dev-master": "3.0-dev"
-=======
                     "dev-master": "2.8-dev"
->>>>>>> yann
                 }
             },
             "autoload": {
@@ -2059,11 +1873,7 @@
             ],
             "description": "Symfony Security Component - ACL (Access Control List)",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
-            "time": "2015-12-28 09:39:46"
-=======
             "time": "2015-12-28 09:39:09"
->>>>>>> yann
         },
         {
             "name": "symfony/swiftmailer-bundle",
@@ -2429,24 +2239,16 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-<<<<<<< HEAD
-    "stability-flags": [],
-=======
     "stability-flags": {
         "friendsofsymfony/user-bundle": 20
     },
->>>>>>> yann
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.3.9"
     },
-<<<<<<< HEAD
-    "platform-dev": []
-=======
     "platform-dev": [],
     "platform-overrides": {
         "php": "5.3.9"
     }
->>>>>>> yann
 }
