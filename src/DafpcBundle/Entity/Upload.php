@@ -20,6 +20,35 @@ class Upload
     public $file;
 
     /**
+     * @var string
+     */
+    private $photo;
+
+
+    /**
+     * Set photo
+     *
+     * @param string $photo
+     * @return Upload
+     */
+    public function setPhoto($photo)
+    {
+        $this->photo = $photo;
+
+        return $this;
+    }
+
+    /**
+     * Get photo
+     *
+     * @return string
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    /**
      * Get id
      *
      * @return integer 
@@ -29,76 +58,38 @@ class Upload
         return $this->id;
     }
 
-    /**
-     * Set file
-     *
-     * @param string $file
-     * @return Upload
-     */
-    public function setFile($file)
-    {
-        $this->file = $file;
 
-        return $this;
+
+    protected function getUploadDir()
+    {
+        return 'upload';
     }
 
-    /**
-     * Get file
-     *
-     * @return string 
-     */
-    public function getFile()
+    protected function getUploadRootDir()
     {
-        return $this->file;
+        return __DIR__.'/../../../web/'.$this->getUploadDir();
     }
 
-    /**
-     * @ORM\PrePersist
-     */
+    public function getWebPath()
+    {
+        return null === $this->photo ? null : $this->getUploadDir().'/'.$this->photo;
+    }
+
+    public function getAbsolutePath()
+    {
+        return null === $this->photo ? null : $this->getUploadRootDir().'/'.$this->photo;
+    }
+
+
     public function preUpload()
     {
         if (null !== $this->file) {
             // do whatever you want to generate a unique name
-            $this->logo = uniqid().'.'.$this->file->guessExtension();
+            $this->photo = uniqid().'.'.$this->file->guessExtension();
         }
     }
 
-    /**
-     * @ORM\PrePersist
-     */
-    public function setCreatedAtValue()
-    {
-        // Add your code here
-    }
 
-    /**
-     * @ORM\PrePersist
-     */
-    public function setExpiresAtValue()
-    {
-        // Add your code here
-    }
-
-    /**
-     * @ORM\PreUpdate
-
-    public function preUpload()
-    {
-        // Add your code here
-    }
-     */
-
-    /**
-     * @ORM\PreUpdate
-     */
-    public function setUpdatedAtValue()
-    {
-        // Add your code here
-    }
-
-    /**
-     * @ORM\PostPersist
-     */
     public function upload()
     {
         if (null === $this->file) {
@@ -108,41 +99,17 @@ class Upload
         // if there is an error when moving the file, an exception will
         // be automatically thrown by move(). This will properly prevent
         // the entity from being persisted to the database on error
-        $this->file->move($this->getUploadRootDir(), $this->logo);
+        $this->file->move($this->getUploadRootDir(), $this->photo);
 
         unset($this->file);
     }
 
-    /**
-     * @ORM\PostRemove
-     */
+
     public function removeUpload()
     {
         if ($file = $this->getAbsolutePath()) {
             unlink($file);
         }
     }
-
-    // deplacement fichier
-    protected function getUploadDir()
-    {
-        return 'upload';
-    }
-
-    protected function getUploadRootDir()
-    {
-        return __DIR__.'/../../../../web/'.$this->getUploadDir();
-    }
-
-    public function getWebPath()
-    {
-        return null === $this->logo ? null : $this->getUploadDir().'/'.$this->logo;
-    }
-
-    public function getAbsolutePath()
-    {
-        return null === $this->logo ? null : $this->getUploadRootDir().'/'.$this->logo;
-    }
-    //
 
 }

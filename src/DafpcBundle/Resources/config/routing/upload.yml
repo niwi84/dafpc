@@ -23,4 +23,15 @@ upload_edit:
 upload_delete:
     path:     /{id}/delete
     defaults: { _controller: "DafpcBundle:Upload:delete" }
-    methods:  DELETE
+    methods:  [POST, DELETE]
+
+
+upload_create:
+    path:     /create
+    defaults: { _controller: "DafpcBundle:Upload:create" }
+    methods:  POST
+
+upload_update:
+    path:     /{id}/update
+    defaults: { _controller: "DafpcBundle:Images:update" }
+    methods:  [POST, PUT]

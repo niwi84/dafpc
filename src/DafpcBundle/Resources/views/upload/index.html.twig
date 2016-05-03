@@ -1,28 +1,27 @@
-{% extends 'base.html.twig' %}
+{% extends '::base.html.twig' %}
 
 {% block body %}
-    <h1>Upload list</h1>
+    <h1>Uploads list</h1>
 
     <table>
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>File</th>
-                <th>Actions</th>
-            </tr>
+        <tr>
+            <th>Photos</th>
+            <th>Actions</th>
+        </tr>
         </thead>
         <tbody>
-        {% for upload in uploads %}
+        {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('upload_show', { 'id': upload.id }) }}">{{ upload.id }}</a></td>
-                <td>{{ upload.file }}</td>
+                <td><a href="{{ path('upload_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('upload_show', { 'id': upload.id }) }}">show</a>
+                            <a href="{{ path('upload_show', { 'id': entity.id }) }}">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('upload_edit', { 'id': upload.id }) }}">edit</a>
+                            <a href="{{ path('upload_edit', { 'id': entity.id }) }}">edit</a>
                         </li>
                     </ul>
                 </td>
@@ -37,3 +36,4 @@
         </li>
     </ul>
 {% endblock %}
+

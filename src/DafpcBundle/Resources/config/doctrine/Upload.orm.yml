@@ -9,14 +9,14 @@ DafpcBundle\Entity\Upload:
             generator:
                 strategy: AUTO
     fields:
-        file:
+        photo:
             type: string
             length: 255
             image: ~
-    #lifecycleCallbacks: {  }
+
     lifecycleCallbacks:
-        prePersist: [ preUpload, setCreatedAtValue, setExpiresAtValue ]
-        preUpdate: [ preUpload, setUpdatedAtValue ]
+        prePersist: [ preUpload ]
+        preUpdate: [ preUpload ]
         postPersist: [ upload ]
         postUpdate: [ upload ]
         postRemove: [ removeUpload ]
