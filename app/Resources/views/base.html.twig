@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+    <html lang="fr">
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +7,11 @@
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <meta name="description" content="">
         <meta name="author" content="">
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 
-        <title>{% block title %}Dafp'c !{% endblock %}</title>
+        <title>{% block title %}{% endblock %}</title>
 
         {% block stylesheets %}
-
             <!-- Bootstrap core CSS -->
             <link rel="stylesheet" type="text/css" href="{{ asset('bundles/dafpc/css/bootstrap.css') }}" />
             <link rel="stylesheet" type="text/css" href="{{ asset('bundles/dafpc/css/bootstrap-theme.css') }}" />
@@ -20,11 +20,10 @@
             <link href="{{ asset('bundles/dafpc/css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
 
             <!-- Custom styles for this template -->
-            <link href="{{ asset('bundles/dafpc/css/cover.css') }}" rel="stylesheet">
+            <link href="{{ asset('bundles/dafpc/css/navbar-static-top.css') }}" rel="stylesheet">
 
             <!-- Appel de nos feuilles de style CSS
-            <link rel="stylesheet" type="text/css" href="{{ asset('bundles/dafpc/css/stylesheet.css') }}" />
-            -->
+            <link rel="stylesheet" type="text/css" href="{{ asset('bundles/dafpc/css/stylesheet.css') }}" /> -->
 
         {% endblock %}
 
@@ -38,75 +37,71 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
 
     <body>
-    <header role="banner">
-
-        <nav id="navbar-primary" class="navbar navbar-default" role="navigation">
-            <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
+        <!-- Static navbar -->
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-primary-collapse">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
+                    <a class="navbar-brand" href="#">Project name</a>
                 </div>
-                <div class="collapse navbar-collapse" id="navbar-primary-collapse">
+                <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">Mes défis</a></li>
-                        <li><a href="#">Mes amis</a></li>
-                        <li><a href="#">Déconnexion</a></li>
-
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                        </li>
                     </ul>
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Default</a></li>
+                        <li class="active"><a href="./">Static top <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#/">Fixed top</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
         </nav>
-    </header><!-- header role="banner" -->
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js'></script>
 
-    <div class="site-wrapper">
+        <div class="container">
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="jumbotron">
 
-        <div class="site-wrapper-inner">
-
-            <div class="cover-container">
-
-                <div class="masthead clearfix">
-                    <div class="inner">
-                        <h3 class="masthead-brand">DAFP'C</h3>
-                        <nav>
-                            <ul class="nav masthead-nav">
-                                <li class="active"><a href="#">Home</a></li>
-                                <li><a href="#">Features</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-
-                <div class="inner cover">
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-                </div>
+                {% block body %}{% endblock %}
 
             </div>
 
+        </div> <!-- /container -->
+        <div id="sidebar">
+            {{ render(controller('FOSUserBundle:Security:login')) }}
         </div>
 
-    </div>
 
-    <!-- Bootstrap core JavaScript
-================================================== -->
+        <!-- Bootstrap core JavaScript ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="{{ asset('bundles/dafpc/js/jquery.min.js') }}"><\/script>')</script>
         <script src="{{ asset('bundles/dafpc/js/bootstrap.min.js') }}"></script>
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <script src="{{ asset('bundles/dafpc/js/ie10-viewport-bug-workaround.js') }}"></script>
+
+        {% block javascripts %}{% endblock %}
+
     </body>
 </html>
