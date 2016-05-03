@@ -1,0 +1,4 @@
+services:
+#    dafpc.example:
+#        class: DafpcBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
