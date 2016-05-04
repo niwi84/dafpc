@@ -22,9 +22,12 @@
             <!-- Custom styles for this template -->
             <link href="{{ asset('bundles/dafpc/css/cover.css') }}" rel="stylesheet">
 
-            <!-- Appel de nos feuilles de style CSS
+            <!-- Appel de nos feuilles de style CSS   -->
+
             <link rel="stylesheet" type="text/css" href="{{ asset('bundles/dafpc/css/stylesheet.css') }}" />
-            -->
+            <link rel="stylesheet" type="text/css" href="{{ asset('bundles/dafpc/css/geoloc.css') }}" />
+
+
 
         {% endblock %}
 
@@ -58,8 +61,9 @@
                 <div class="collapse navbar-collapse" id="navbar-primary-collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">Mes défis</a></li>
+                        <li><a href="/geolocalisation">Mes défis</a></li>
                         <li><a href="#">Mes amis</a></li>
+                        <li><a </li>
                         <li><a href="#">Déconnexion</a></li>
 
                     </ul>
@@ -78,14 +82,8 @@
 
                 <div class="masthead clearfix">
                     <div class="inner">
-                        <h3 class="masthead-brand">DAFP'C</h3>
-                        <nav>
-                            <ul class="nav masthead-nav">
-                                <li class="active"><a href="#">Home</a></li>
-                                <li><a href="#">Features</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
-                        </nav>
+
+
                     </div>
                 </div>
 

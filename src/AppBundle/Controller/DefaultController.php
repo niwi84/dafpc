@@ -18,4 +18,11 @@ class DefaultController extends Controller
             'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..'),
         ));
     }
+
+
+    public function geolocAction ()
+    {
+        return $this->render('@App/geolocalisation.html.twig');
+    }
+
 }
