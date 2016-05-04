@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+    <html lang="fr">
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +7,11 @@
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <meta name="description" content="">
         <meta name="author" content="">
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 
-        <title>{% block title %}Dafp'c !{% endblock %}</title>
+        <title>{% block title %}{% endblock %}</title>
 
         {% block stylesheets %}
-
             <!-- Bootstrap core CSS -->
             <link rel="stylesheet" type="text/css" href="{{ asset('bundles/dafpc/css/bootstrap.css') }}" />
             <link rel="stylesheet" type="text/css" href="{{ asset('bundles/dafpc/css/bootstrap-theme.css') }}" />
@@ -20,12 +20,14 @@
             <link href="{{ asset('bundles/dafpc/css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
 
             <!-- Custom styles for this template -->
-            <link href="{{ asset('bundles/dafpc/css/cover.css') }}" rel="stylesheet">
+            <link href="{{ asset('bundles/dafpc/css/navbar-static-top.css') }}" rel="stylesheet">
+
 
             <!-- Appel de nos feuilles de style CSS   -->
 
             <link rel="stylesheet" type="text/css" href="{{ asset('bundles/dafpc/css/stylesheet.css') }}" />
             <link rel="stylesheet" type="text/css" href="{{ asset('bundles/dafpc/css/geoloc.css') }}" />
+
 
 
 
@@ -41,23 +43,23 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
 
     <body>
-    <header role="banner">
 
-        <nav id="navbar-primary" class="navbar navbar-default" role="navigation">
-            <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
+        <!-- Static navbar -->
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-primary-collapse">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
+                    <a class="navbar-brand" href="{{ path('dafpc_homepage') }}">DAFP'C</a>
                 </div>
+<<<<<<< HEAD
                 <div class="collapse navbar-collapse" id="navbar-primary-collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Home</a></li>
@@ -66,10 +68,44 @@
                         <li><a </li>
                         <li><a href="#">Déconnexion</a></li>
 
+=======
+                <div id="navbar" class="navbar-collapse collapse">
+                    <!-- <ul class="nav navbar-nav"> -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li {% if app.request.get('_route') == 'dafpc_homepage' %}
+                            class="active"{% endif %}>
+                            <a href="{{ path('dafpc_homepage') }}">Accueil</a>
+                        </li>
+                        <li {% if app.request.get('_route') == 'upload_index' %}
+                            class="active"{% endif %}>
+                            <a href="{{ path('upload_index') }}">Upload</a>
+                        </li>
+                        <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Connexion <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                {{ render(controller('FOSUserBundle:Security:login')) }}
+                            </li>
+                            <!-- <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li> -->
+                        </ul>
+                        </li>
+>>>>>>> 29b6f256ba17a08e28720e7ea2f37794f8c76a3b
                     </ul>
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
+                    <!-- <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Default</a></li>
+                        <li class="active"><a href="./">Static top <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#/">Fixed top</a></li>
+                    </ul> -->
+                </div><!--/.nav-collapse -->
+            </div>
         </nav>
+<<<<<<< HEAD
     </header><!-- header role="banner" -->
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js'></script>
@@ -91,20 +127,27 @@
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
                 </div>
+=======
+>>>>>>> 29b6f256ba17a08e28720e7ea2f37794f8c76a3b
+
+        <div class="container">
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="jumbotron">
+
+                {% block body %}{% endblock %}
 
             </div>
+        </div> <!-- /container -->
 
-        </div>
-
-    </div>
-
-    <!-- Bootstrap core JavaScript
-================================================== -->
+        <!-- Bootstrap core JavaScript ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="{{ asset('bundles/dafpc/js/jquery.min.js') }}"><\/script>')</script>
         <script src="{{ asset('bundles/dafpc/js/bootstrap.min.js') }}"></script>
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <script src="{{ asset('bundles/dafpc/js/ie10-viewport-bug-workaround.js') }}"></script>
+
+        {% block javascripts %}{% endblock %}
+
     </body>
 </html>
