@@ -16,7 +16,7 @@ class UploadType extends AbstractType
     {
         $builder
             //->add('file')
-            ->add('file', 'file', array('label' => 'Company logo', 'required' => false))
+            ->add('file', 'file', array('label' => 'Photo', 'required' => false))
         ;
     }
     

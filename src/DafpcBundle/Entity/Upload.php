@@ -112,4 +112,28 @@ class Upload
         }
     }
 
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function setTokenValue()
+    {
+        // Add your code here
+    }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function setCreatedAtValue()
+    {
+        // Add your code here
+    }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function setExpiresAtValue()
+    {
+        // Add your code here
+    }
 }

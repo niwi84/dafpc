@@ -2,25 +2,38 @@
 {% block title %}Dafp'c | Upload{% endblock %}
 
 {% block body %}
-    <h1>Uploads</h1>
+    <h1>Défi n° {{ entity.id }}</h1>
 
-    <table>
+    <table class="table-responsive">
         <tbody>
+            <tr>
+                <img src = "{{ app.request.basepath  }}/upload/{{ entity.photo }}">
+            </tr>
+            <tr>
+                <td>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="{{ path('upload_edit', { 'id': entity.id }) }}">Modifier</a>
+                        </li>
+                        <li>
+                            {{ form_start(delete_form) }}
+                            {{ form_end(delete_form) }}
+                        </li>
 
-        <img src = "{{ app.request.basepath  }}/upload/{{ entity.photo }}">
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="{{ path('upload_index') }}">Liste des défis</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
 
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('upload_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('upload_edit', { 'id': entity.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
 {% endblock %}

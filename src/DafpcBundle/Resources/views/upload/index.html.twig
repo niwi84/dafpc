@@ -2,9 +2,9 @@
 {% block title %}Dafp'c | Upload{% endblock %}
 
 {% block body %}
-    <h1>Uploads list</h1>
+    <h1>Mes défis</h1>
 
-    <table>
+    <table class="table-responsive">
         <thead>
         <tr>
             <th>Photos</th>
@@ -14,27 +14,34 @@
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('upload_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-
                 <td>
-                    <ul>
+                    <ul class="list-inline">
                         <li>
-                            <a href="{{ path('upload_show', { 'id': entity.id }) }}">show</a>
+                            <a href="{{ path('upload_show', { 'id': entity.id }) }}">{{ entity.photo }}</a>
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="{{ path('upload_show', { 'id': entity.id }) }}">Voir</a>
                         </li>
                         <li>
-                            <a href="{{ path('upload_edit', { 'id': entity.id }) }}">edit</a>
+                            <a href="{{ path('upload_edit', { 'id': entity.id }) }}">Modifier</a>
                         </li>
                     </ul>
                 </td>
             </tr>
         {% endfor %}
+        <td>
+            <ul class="list-inline">
+                <li>
+                    <a href="{{ path('upload_new') }}">Télécharger une nouvelle photo</a>
+                </li>
+            </ul>
+        </td>
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('upload_new') }}">Create a new entry</a>
-        </li>
-    </ul>
 {% endblock %}
 

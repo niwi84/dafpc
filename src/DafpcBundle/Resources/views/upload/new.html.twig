@@ -2,16 +2,16 @@
 {% block title %}Dafp'c | Upload{% endblock %}
 
 {% block body %}
-    <h1>Uploads creation</h1>
+    <h1>Télécharger une nouvelle photo</h1>
 
     {{ form_start(form) }}
     {{ form_widget(form) }}
 
     {{ form_end(form) }}
 
-    <ul>
+    <ul class="list-inline">
         <li>
-            <a href="{{ path('upload_index') }}">Back to the list</a>
+            <a href="{{ path('upload_index') }}">Liste des défis</a>
         </li>
     </ul>
 {% endblock %}
