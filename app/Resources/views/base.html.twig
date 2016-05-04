@@ -91,7 +91,10 @@
                             <li><a href="#">One more separated link</a></li> -->
                         </ul>
                         </li>
-
+                        <li {% if app.request.get('_route') == 'fos_user_security_logout' %}
+                            class="active"{% endif %}>
+                            <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
+                        </li>
                     </ul>
                     <!-- <ul class="nav navbar-nav navbar-right">
                         <li><a href="#">Default</a></li>
